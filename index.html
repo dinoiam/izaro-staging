@@ -23,6 +23,39 @@
             z-index: 1000;
             width: 40%;
         }
+        .lang-btn {
+            background: none;
+            border: none;
+            color: inherit;
+            padding: 4px 10px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: opacity 0.2s;
+            opacity: 0.5;
+            font-weight: 400;
+        }
+        .lang-btn.active {
+            opacity: 1;
+            font-weight: 600;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+        .lang-btn:hover {
+            opacity: 0.8;
+        }
+        .lang-switcher {
+            display: inline-flex;
+            gap: 2px;
+            margin-left: 12px;
+        }
+        .lang-switcher .lang-btn:not(:last-child)::after {
+            content: '|';
+            margin-left: 4px;
+            opacity: 0.3;
+        }
+        .lang-switcher .lang-btn.active::after {
+            opacity: 0.5;
+        }
     </style>
 </head>
 
@@ -31,6 +64,10 @@
     <header>
         <img src="logo.svg" alt="ÍZAROcafè" class="logo-svg">
         <div class="logo-sub">Benvenuti. Lasciatevi ispirare.</div>
+        <div class="lang-switcher">
+            <button class="lang-btn active" data-lang="it" onclick="switchLanguage('it')">IT</button>
+            <button class="lang-btn" data-lang="en" onclick="switchLanguage('en')">EN</button>
+        </div>
     </header>
 
     <div class="sticky-header">
@@ -44,26 +81,121 @@
     <div class="container" id="container"></div>
 
     <div class="no-results" id="no-results">
-        <p>Nessun prodotto trovato.</p>
-        <p class="hint">Prova con un'altra parola chiave.</p>
+        <p id="no-results-title">Nessun prodotto trovato.</p>
+        <p class="hint" id="no-results-hint">Prova con un'altra parola chiave.</p>
     </div>
 
     <footer id="site-footer"></footer>
 
     <script>
         let menuData = null;
-        let currentSectionId = '';
+        let currentLang = 'it';
         let observer = null;
         const scrollMargin = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--scroll-margin')) || 145;
+
+        const translationsText = {
+            it: {
+                searchPlaceholder: 'Cerca nel menù...',
+                noResultsTitle: 'Nessun prodotto trovato.',
+                noResultsHint: 'Prova con un\'altra parola chiave.',
+                footerNote: 'Il registro completo è disponibile presso il nostro personale.',
+                footerCopyright: '&copy; 2026 ÍZAROcafè. Tutti i diritti riservati.',
+                logoSub: 'Benvenuti. Lasciatevi ispirare.'
+            },
+            en: {
+                searchPlaceholder: '[EN] Cerca nel menù...',
+                noResultsTitle: '[EN] Nessun prodotto trovato.',
+                noResultsHint: '[EN] Prova con un\'altra parola chiave.',
+                footerNote: '[EN] Il registro completo è disponibile presso il nostro personale.',
+                footerCopyright: '&copy; 2026 ÍZAROcafè. Tutti i diritti riservati.',
+                logoSub: '[EN] Benvenuti. Lasciatevi ispirare.'
+            }
+        };
+
+        function updateUILanguage() {
+            const t = translationsText[currentLang] || translationsText['it'];
+            document.documentElement.lang = currentLang;
+            document.querySelector('.logo-sub').textContent = t.logoSub;
+            document.getElementById('search-input').placeholder = t.searchPlaceholder;
+            document.getElementById('no-results-title').textContent = t.noResultsTitle;
+            document.getElementById('no-results-hint').textContent = t.noResultsHint;
+        }
+
+        function getLangData() {
+            const lang = currentLang;
+            const trans = menuData.translations[lang];
+            if (!trans) {
+                // Lingua non supportata → fallback a it e aggiorna URL/localStorage
+                currentLang = 'it';
+                localStorage.setItem('lang', 'it');
+                const url = new URL(window.location);
+                url.searchParams.set('lang', 'it');
+                history.replaceState(null, '', url.toString());
+                document.querySelectorAll('.lang-btn').forEach(btn => {
+                    btn.classList.toggle('active', btn.dataset.lang === 'it');
+                });
+                return menuData.translations['it'];
+            }
+            return trans;
+        }
+
+        function switchLanguage(lang) {
+            if (lang === currentLang) return;
+            currentLang = lang;
+            localStorage.setItem('lang', lang);
+            updateUILanguage();
+
+            // Aggiorna URL con il parametro lang
+            const url = new URL(window.location);
+            url.searchParams.set('lang', lang);
+            history.replaceState(null, '', url.toString());
+
+            // Aggiorna pulsanti attivi
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+            });
+
+            // Resetta ricerca
+            const input = document.getElementById('search-input');
+            input.value = '';
+            document.body.classList.remove('search-active');
+            document.getElementById('no-results').style.display = 'none';
+
+            // Re-renderizza tutto con la nuova lingua
+            const data = getLangData();
+            renderNav(data.sections);
+            renderSections(data);
+            renderFooter(data);
+            initObserver(data.sections);
+        }
+
+        // Legge lingua prima del fetch per UI immediata
+        (function initLang() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const lang = urlParams.get('lang') || localStorage.getItem('lang') || 'it';
+            currentLang = lang;
+            localStorage.setItem('lang', lang);
+            // Se l'URL non ha il parametro lang, lo aggiunge per coerenza
+            if (!urlParams.has('lang')) {
+                const url = new URL(window.location);
+                url.searchParams.set('lang', lang);
+                history.replaceState(null, '', url.toString());
+            }
+        })();
+        updateUILanguage();
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.lang === currentLang);
+        });
 
         fetch('data/menu.json')
             .then(r => r.json())
             .then(data => {
                 menuData = data;
-                renderNav(data.sections);
-                renderSections(data);
-                renderFooter(data);
-                initObserver(data.sections);
+                const langData = getLangData();
+                renderNav(langData.sections);
+                renderSections(langData);
+                renderFooter(langData);
+                initObserver(langData.sections);
                 document.getElementById('search-input').addEventListener('input', onSearch);
                 document.getElementById('container').addEventListener('click', onSectionTitleClick);
             });
@@ -128,10 +260,11 @@
 
         function renderFooter(data) {
             const footer = document.getElementById('site-footer');
+            const t = translationsText[currentLang] || translationsText['it'];
             footer.innerHTML = `
                 <p><strong>${data.allergenLegend}</strong></p>
-                <p style="margin-top: 10px;">Il registro completo è disponibile presso il nostro personale.</p>
-                <p style="margin-top: 15px; font-size:0.7rem; opacity:0.6;">&copy; 2026 ÍZAROcafè. Tutti i diritti riservati.</p>
+                <p style="margin-top: 10px;">${t.footerNote}</p>
+                <p style="margin-top: 15px; font-size:0.7rem; opacity:0.6;">${t.footerCopyright}</p>
             `;
         }
 
@@ -186,12 +319,14 @@
             }
 
             if (!isSearching) {
-                renderSections(menuData);
-                initObserver(menuData.sections);
+                const data = getLangData();
+                renderSections(data);
+                initObserver(data.sections);
                 return;
             }
 
-            const filtered = filterData(menuData, q);
+            const data = getLangData();
+            const filtered = filterData(data, q);
 
             if (filtered.sections.length === 0) {
                 document.getElementById('container').innerHTML = '';

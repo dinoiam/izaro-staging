@@ -1,406 +1,572 @@
 {
-  "sections": [
-    {
-      "id": "caffetteria",
-      "label": "Selezione Caffè",
-      "title": "La nostra Selezione Caffè",
-      "infoBox": "Per offrire l'eccellenza in tazzina, utilizziamo esclusivamente la Miscela Italia della torrefazione Caffè Crème: un blend ricercato, pensato per chi cerca l'equilibrio perfetto tra intensità e cremosità. </br></br> Per tutte le nostre preparazioni usiamo solo latte fresco intero (parzialmente scremato, su richiesta).",
-      "content": [
+  "translations": {
+    "it": {
+      "sections": [
         {
-          "type": "items",
-          "subtitle": "I grandi classici",
-          "items": [
+          "id": "caffetteria",
+          "label": "Selezione Caffè",
+          "title": "La nostra Selezione Caffè",
+          "infoBox": "Per offrire l'eccellenza in tazzina, utilizziamo esclusivamente la Miscela Italia della torrefazione Caffè Crème: un blend ricercato, pensato per chi cerca l'equilibrio perfetto tra intensità e cremosità. </br></br> Per tutte le nostre preparazioni usiamo solo latte fresco intero (parzialmente scremato, su richiesta).",
+          "content": [
             {
-              "name": "Espresso",
-              "description": "L'aroma intenso e la crema compatta di un classico senza tempo.",
-              "price": "€ 1,20"
+              "type": "items",
+              "subtitle": "I grandi classici",
+              "items": [
+                {
+                  "name": "Espresso",
+                  "description": "L'aroma intenso e la crema compatta di un classico senza tempo.",
+                  "price": "€ 1,20"
+                },
+                {
+                  "name": "Espresso Macchiato",
+                  "description": "L'intensità dell'espresso classico, macchiato a scelta con crema di latte calda o latte freddo.",
+                  "price": "€ 1,20",
+                  "allergens": "ALL. 7"
+                },
+                {
+                  "name": "Caffè Americano",
+                  "description": "Espresso allungato con acqua calda, per un sorso leggero e prolungato.",
+                  "price": "€ 2,00"
+                },
+                {
+                  "name": "Espressino",
+                  "price": "€ 1,30",
+                  "description": "Un perfetto equilibrio di espresso e vellutata crema di latte, completato da una golosa spolverata di cacao.",
+                  "allergens": "ALL. 7"
+                },
+                {
+                  "name": "Cappuccino",
+                  "price": "€ 1,50",
+                  "description": "Un morbido abbraccio di crema di latte vellutata e intenso espresso.",
+                  "allergens": "ALL. 7"
+                },
+                {
+                  "name": "Babyccino al Cacao",
+                  "price": "€ 1,30",
+                  "description": "Una tazzina di soffice latte montato a crema, impreziosita da una golosa spolverata di cacao. La pausa caffè pensata per i più piccoli.",
+                  "allergens": "ALL. 7"
+                },
+                {
+                  "name": "Mokaccino",
+                  "price": "€ 1,80",
+                  "description": "Un goloso incontro tra il calore dell'espresso, la morbidezza della crema di latte e l'intensa dolcezza del cioccolato.",
+                  "allergens": "ALL. 7"
+                },
+                {
+                  "name": "Caffellatte",
+                  "price": "€ 1,70",
+                  "description": "Il sapore avvolgente del caffè unito a un'ampia e confortevole parte di latte.",
+                  "allergens": "ALL. 7"
+                },
+                {
+                  "name": "Latte Bianco",
+                  "price": "€ 1,50",
+                  "description": "Servito caldo o freddo. Semplice, nutriente e delicato.",
+                  "allergens": "ALL. 7"
+                },
+                {
+                  "name": "Latte Macchiato",
+                  "price": "€ 1,50",
+                  "description": "Una nuvola di soffice crema di latte che incontra l'intensità dell'espresso.",
+                  "allergens": "ALL. 7"
+                },
+                {
+                  "name": "Orzo",
+                  "description": "L'alternativa naturale e priva di caffeina: una tazza dal gusto morbido, tostato e delicato, perfetta in ogni momento.",
+                  "price": "€ 1,50",
+                  "allergens": "ALL. 1"
+                },
+                {
+                  "name": "GINSENG",
+                  "description": "Una ricarica di pura energia nella sua versione naturale, non zuccherata. Una bevanda cremosa dal sapore deciso e speziato, ideale per chi desidera personalizzare la propria pausa dolcificandola a piacere.",
+                  "price": "€ 1,50",
+                  "allergens": "ALL. 7"
+                }
+              ]
             },
             {
-              "name": "Espresso Macchiato",
-              "description": "L'intensità dell'espresso classico, macchiato a scelta con crema di latte calda o latte freddo.",
-              "price": "€ 1,20",
-              "allergens": "ALL. 7"
+              "type": "items",
+              "subtitle": "I Freddi",
+              "items": [
+                {
+                  "name": "Caffè in Ghiaccio",
+                  "description": "Espresso appena estratto servito con un bicchiere di ghiaccio a parte, pronto da versare per preservare tutto l'aroma del caffè.",
+                  "price": "€ 1,50"
+                },
+                {
+                  "name": "Caffè Freddo",
+                  "price": "€ 2,00",
+                  "description": "Il piacere dissetante del caffè in una fine consistenza ghiacciata."
+                },
+                {
+                  "name": "Caffè Leccese",
+                  "price": "€ 2,00",
+                  "description": "La tradizione salentina dell'espresso su ghiaccio, esaltato dalla nota dolce e aromatica della mandorla.",
+                  "allergens": "ALL. 8"
+                },
+                {
+                  "name": "Iced Americano",
+                  "price": "€ 2,30",
+                  "description": "Il gusto pulito del caffè americano, estratto caldo ed espresso direttamente su cubetti di ghiaccio per una pausa rinfrescante e prolungata."
+                },
+                {
+                  "name": "Iced Latte",
+                  "price": "€ 2,50",
+                  "description": "Un'armoniosa e fresca unione di latte freddo e ghiaccio, sormontata da un espresso intenso.",
+                  "allergens": "ALL. 7"
+                }
+              ]
             },
             {
-              "name": "Caffè Americano",
-              "description": "Espresso allungato con acqua calda, per un sorso leggero e prolungato.",
-              "price": "€ 2,00"
+              "type": "items",
+              "subtitle": "Le altre preparazioni",
+              "items": [
+                {
+                  "name": "Cioccolata Calda",
+                  "price": "€ 3,00",
+                  "description": "Preparata sempre al momento per garantire una consistenza densa, ricca e avvolgente.",
+                  "allergens": "ALL. 7"
+                },
+                {
+                  "name": "Crema al Caffè",
+                  "price": "€ 3,00",
+                  "allergens": "ALL. 7",
+                  "description": "Un dessert fresco e vellutato, perfetto per una pausa golosa e rigenerante."
+                },
+                {
+                  "name": "Spremuta d'Arancia Fresca",
+                  "price": "€ 3,00",
+                  "description": "Una rinfrescante ricarica di pura vitamina C, spremuta al momento."
+                },
+                {
+                  "name": "Tea / Infusi / Camomilla",
+                  "price": "€ 2,00",
+                  "description": "Una calda selezione di miscele e profumi pregiati, ideali per un momento di relax."
+                }
+              ]
             },
             {
-              "name": "Espressino",
-              "price": "€ 1,30",
-              "description": "Un perfetto equilibrio di espresso e vellutata crema di latte, completato da una golosa spolverata di cacao.",
-              "allergens": "ALL. 7"
-            },
-            {
-              "name": "Cappuccino",
-              "price": "€ 1,50",
-              "description": "Un morbido abbraccio di crema di latte vellutata e intenso espresso.",
-              "allergens": "ALL. 7"
-            },
-            {
-              "name": "Babyccino al Cacao",
-              "price": "€ 1,30",
-              "description": "Una tazzina di soffice latte montato a crema, impreziosita da una golosa spolverata di cacao. La pausa caffè pensata per i più piccoli.",
-              "allergens": "ALL. 7"
-            },
-            {
-              "name": "Mokaccino",
-              "price": "€ 1,80",
-              "description": "Un goloso incontro tra il calore dell'espresso, la morbidezza della crema di latte e l'intensa dolcezza del cioccolato.",
-              "allergens": "ALL. 7"
-            },
-            {
-              "name": "Caffellatte",
-              "price": "€ 1,70",
-              "description": "Il sapore avvolgente del caffè unito a un'ampia e confortevole parte di latte.",
-              "allergens": "ALL. 7"
-            },
-            {
-              "name": "Latte Bianco",
-              "price": "€ 1,50",
-              "description": "Servito caldo o freddo. Semplice, nutriente e delicato.",
-              "allergens": "ALL. 7"
-            },
-            {
-              "name": "Latte Macchiato",
-              "price": "€ 1,50",
-              "description": "Una nuvola di soffice crema di latte che incontra l'intensità dell'espresso.",
-              "allergens": "ALL. 7"
-            },
-           {
-              "name": "Orzo",
-              "description": "L'alternativa naturale e priva di caffeina: una tazza dal gusto morbido, tostato e delicato, perfetta in ogni momento.",
-              "price": "€ 1,50",
-              "allergens": "ALL. 1"
-            },
-            {
-              "name": "GINSENG",
-              "description": "Una ricarica di pura energia nella sua versione naturale, non zuccherata. Una bevanda cremosa dal sapore deciso e speziato, ideale per chi desidera personalizzare la propria pausa dolcificandola a piacere.",
-              "price": "€ 1,50",
-              "allergens": "ALL. 7"
+              "type": "customBox",
+              "title": "Personalizza il tuo momento",
+              "paragraphs": [
+                "<strong>Sciroppi:</strong> Personalizza il tuo caffè con i nostri sciroppi (+0,50 €)",
+                "<strong>Varianti & Sostituzioni:</strong> Aggiunta Latte (+0,20 €) | Orzo (+0,30 €) | Ginseng (+0,30 €) | Decaffeinato (+0,10 €)",
+                "<strong>Scelte Veg & Intolleranze:</strong> Bevanda Vegetale (+0,20 €) |  Latte Delattosato (+0,20 €)",
+                "<strong>Extra:</strong> Miele (+0,30 €) | Panna Montata (+0,50 €) | Ghiaccio (+0,30 €)",
+                "<strong>Correzioni:</strong> Sambuca, Zabov, Borghetti (+0,50 €) | Baileys, Distillati (+0,80 €)",
+                "<strong>Nota:</strong> Per i prodotti di caffetteria da asporto è previsto un supplemento di 0,10 € a pezzo."
+              ]
             }
           ]
         },
         {
-          "type": "items",
-          "subtitle": "I Freddi",
-          "items": [
+          "id": "freschi",
+          "label": "Freschi & Dissetanti",
+          "title": "I freschi & dissetanti",
+          "infoBox": "Ricette storiche, sciroppi tradizionali e specialità espresse: una selezione di bevande rinfrescanti pensate per regalarti una pausa autentica e rigenerante in qualsiasi momento.",
+          "content": [
             {
-              "name": "Caffè in Ghiaccio",
-              "description": "Espresso appena estratto servito con un bicchiere di ghiaccio a parte, pronto da versare per preservare tutto l'aroma del caffè.",
-              "price": "€ 1,50"
+              "type": "items",
+              "subtitle": "I classici",
+              "items": [
+                {
+                  "name": "Latte e menta",
+                  "description": "Un'iconica combinazione di dolcezza e freschezza: il sapore delicato del latte fresco incontra la nota rigenerante e profumata dello sciroppo di menta.",
+                  "price": "€ 2,50",
+                  "allergens": "ALL. 7"
+                },
+                {
+                  "name": "Acqua e orzata",
+                  "description": " Il dissetante tradizionale per eccellenza: la dolcezza avvolgente e l'aroma inconfondibile dell'orzata, servita fresca e ghiacciata.",
+                  "price": "€ 2,00",
+                  "allergens": "ALL. 8"
+                },
+                {
+                  "name": "Acqua e mandorla",
+                  "description": "Un grande classico dell'estate: tutto il piacere rinfrescante dell'acqua unito alla nota dolce, intensa e profondamente aromatica dello sciroppo di mandorla.",
+                  "price": "€ 2,00",
+                  "allergens": "ALL. 8"
+                },
+                {
+                  "name": "Acqua e menta",
+                  "description": "Semplice, immediata e totalmente rigenerante: la freschezza assoluta della menta si unisce alla purezza dell'acqua per una perfetta pausa dissetante.",
+                  "price": "€ 2,00"
+                },
+                {
+                  "name": "Tea freddo",
+                  "description": "Un grande classico dell'estate, fresco e rigenerante. Disponibile al gusto limone o pesca, servito con ghiaccio.",
+                  "price": "€ 2,00"
+                }
+              ]
             },
             {
-              "name": "Caffè Freddo",
-              "price": "€ 2,00",
-              "description": "Il piacere dissetante del caffè in una fine consistenza ghiacciata."
-            },
-            {
-              "name": "Caffè Leccese",
-              "price": "€ 2,00",
-              "description": "La tradizione salentina dell'espresso su ghiaccio, esaltato dalla nota dolce e aromatica della mandorla.",
-              "allergens": "ALL. 8"
-            },
-            {
-              "name": "Iced Americano",
-              "price": "€ 2,30",
-              "description": "Il gusto pulito del caffè americano, estratto caldo ed espresso direttamente su cubetti di ghiaccio per una pausa rinfrescante e prolungata."
-            },
-            {
-              "name": "Iced Latte",
-              "price": "€ 2,50",
-              "description": "Un'armoniosa e fresca unione di latte freddo e ghiaccio, sormontata da un espresso intenso.",
-              "allergens": "ALL. 7"
+              "type": "items",
+              "subtitle": "Le sciacquette",
+              "items": [
+                {
+                  "name": "Sciacquetta Classica",
+                  "price": "€ 2,00",
+                  "description": "La rinfrescante anima di Bari in versione tradizionale: limone fresco, ghiaccio tritato e acqua tonica."
+                },
+                {
+                  "name": "Sciacquetta Mediterranea",
+                  "price": "€ 2,50",
+                  "description": "Una variante agrumata e dissetante: un blend fresco di arancia e limone con ghiaccio tritato e acqua tonica."
+                }
+              ]
             }
           ]
         },
         {
-          "type": "items",
-          "subtitle": "Le altre preparazioni",
-          "items": [
+          "id": "specialita",
+          "label": "Specialità Caffè",
+          "title": "Specialità al Caffè",
+          "infoBox": "Non il solito espresso. Esperienze di caffè e coffee cocktail per ogni momento della giornata.",
+          "content": [
             {
-              "name": "Cioccolata Calda",
-              "price": "€ 3,00",
-              "description": "Preparata sempre al momento per garantire una consistenza densa, ricca e avvolgente.",
-              "allergens": "ALL. 7"
+              "type": "items",
+              "subtitle": "Gli shakerati",
+              "items": [
+                {
+                  "name": "Caffè Shakerato",
+                  "price": "€ 3,00",
+                  "description": "Espresso fresco shakerato energicamente con ghiaccio, fino a ottenere una crema densa e vellutata."
+                },
+                {
+                  "name": "Caffè Shakerato al Borghetti",
+                  "price": "€ 3,50",
+                  "description": "Il classico shakerato, intensificato dalle note decise dello storico liquore al caffè."
+                },
+                {
+                  "name": "Caffè Shakerato al Baileys",
+                  "price": "€ 3,80",
+                  "description": "Una versione piacevolmente cremosa, arricchita dal tocco avvolgente del Baileys.",
+                  "allergens": "ALL. 7"
+                },
+                {
+                  "name": "Caffè Shakerato Leccese",
+                  "price": "€ 2,50",
+                  "description": "L'autentico rito salentino rivisitato in un'intensa ed elegante versione shakerata.",
+                  "allergens": "ALL. 8"
+                }
+              ]
             },
             {
-              "name": "Crema al Caffè",
-              "price": "€ 3,00",
-              "allergens": "ALL. 7",
-              "description": "Un dessert fresco e vellutato, perfetto per una pausa golosa e rigenerante."
-            },
-            {
-              "name": "Spremuta d'Arancia Fresca",
-              "price": "€ 3,00",
-              "description": "Una rinfrescante ricarica di pura vitamina C, spremuta al momento."
-            },
-            {
-              "name": "Tea / Infusi / Camomilla",
-              "price": "€ 2,00",
-              "description": "Una calda selezione di miscele e profumi pregiati, ideali per un momento di relax."
+              "type": "items",
+              "subtitle": "Cocktail al caffè",
+              "items": [
+                {
+                  "name": "Espresso Tonic",
+                  "price": "€ 3,50",
+                  "description": "L'incontro sorprendente tra la freschezza briosa dell'acqua tonica, ghiaccio e l'intensità di un espresso versato in superficie. Agrumato, dissetante e decisamente energetico."
+                },
+                {
+                  "name": "Espresso Martini",
+                  "price": "€ 6,00",
+                  "description": "Un grande classico: Vodka e liquore al caffè si fondono con l'intensità di un espresso fresco."
+                },
+                {
+                  "name": "Black Russian",
+                  "price": "€ 6,00",
+                  "description": "Intenso e deciso. Vodka liscia e liquore al caffè, serviti corti su cubetti di ghiaccio."
+                },
+                {
+                  "name": "Irish Coffee",
+                  "price": "€ 6,00",
+                  "description": "Caffè lungo e caldo, Irish Whiskey e zucchero di canna, sormontati da un morbido strato di panna fresca.",
+                  "allergens": "ALL. 7"
+                }
+              ]
             }
           ]
         },
         {
-          "type": "customBox",
-          "title": "Personalizza il tuo momento",
-          "paragraphs": [
-            "<strong>Sciroppi:</strong> Personalizza il tuo caffè con i nostri sciroppi (+0,50 €)",
-            "<strong>Varianti & Sostituzioni:</strong> Aggiunta Latte (+0,20 €) | Orzo (+0,30 €) | Ginseng (+0,30 €) | Decaffeinato (+0,10 €)",
-            "<strong>Scelte Veg & Intolleranze:</strong> Bevanda Vegetale (+0,20 €) |  Latte Delattosato (+0,20 €)",
-            "<strong>Extra:</strong> Miele (+0,30 €) | Panna Montata (+0,50 €) | Ghiaccio (+0,30 €)",
-            "<strong>Correzioni:</strong> Sambuca, Zabov, Borghetti (+0,50 €) | Baileys, Distillati (+0,80 €)",
-            "<strong>Nota:</strong> Per i prodotti di caffetteria da asporto è previsto un supplemento di 0,10 € a pezzo."
+          "id": "colazione",
+          "label": "Colazione & Dolci",
+          "title": "Colazione & Dolci",
+          "infoBox": "Pasticceria fresca ogni mattina per un buongiorno speciale.",
+          "content": [
+            {
+              "type": "items",
+              "subtitle": "Colazione",
+              "items": [
+                {
+                  "name": "Cornetto classico o Farcito",
+                  "price": "€ 1,30",
+                  "description": "Sfoglia fragrante e leggera, disponibile vuoto o con le nostre farciture della casa.",
+                  "allergens": "ALL. 1, 3, 7"
+                },
+                {
+                  "name": "Cornetto ai cereali o vegano",
+                  "price": "€ 1,30",
+                  "description": "Tutto il gusto della colazione racchiuso in un impasto alternativo, leggero e nutriente.",
+                  "allergens": "ALL. 1"
+                },
+                {
+                  "name": "Cornetto doppia farcitura",
+                  "price": "€ 1,40",
+                  "description": "Per i più golosi: un doppio e ricco ripieno per un'esplosione di sapore.",
+                  "allergens": "ALL. 1, 3, 6, 7"
+                },
+                {
+                  "name": "Cornetto mignon",
+                  "price": "€ 0,80",
+                  "description": "La nostra sfoglia in formato ridotto, per un dolce e leggero sfizio quotidiano.",
+                  "allergens": "ALL. 1, 3, 6, 7"
+                },
+                {
+                  "name": "Cornetto senza glutine",
+                  "price": "€ 2,80",
+                  "description": "La fragranza della colazione tradizionale, preparata con cura e racchiusa in sicurezza.",
+                  "allergens": "ALL. 3, 7"
+                },
+                {
+                  "name": "Sfoglia o saccottino",
+                  "price": "€ 1,50",
+                  "description": "Dolci geometrie di pasta sfoglia, burrose e irresistibili.",
+                  "allergens": "ALL. 1, 3, 7"
+                },
+                {
+                  "name": "Pangocciolo",
+                  "price": "€ 1,50",
+                  "description": "Un soffice e tenero morso arricchito da una pioggia di gocce di cioccolato.",
+                  "allergens": "ALL. 1, 3, 6, 7"
+                },
+                {
+                  "name": "Krapfen e tarallo di zucchero",
+                  "price": "€ 1,30",
+                  "description": "La tradizione dei grandi fritti delle feste, soffici e ricoperti di zucchero.",
+                  "allergens": "ALL. 1, 3, 7"
+                }
+              ]
+            },
+            {
+              "type": "items",
+              "subtitle": "Dolci",
+              "items": [
+                {
+                  "name": "Frollino",
+                  "price": "€ 1,00",
+                  "description": "Friabili biscotti di frolla artigianale, disponibili semplici o con ricche farciture, perfetti da inzuppare o da gustare da soli.",
+                  "allergens": "ALL. 1, 3, 7"
+                },
+                {
+                  "name": "Frollino Falcone Senza Glutine",
+                  "price": "€ 1,80",
+                  "description": "Tutta la fragranza e la friabilità della frolla firmata Falcone, preparata con ingredienti selezionati senza glutine.",
+                  "allergens": "ALL. 3, 7"
+                },
+                {
+                  "name": "Nutella Muffin Ferrero",
+                  "price": "€ 2,00",
+                  "description": "L'originale muffin firmato Ferrero: un soffice impasto con yogurt che racchiude un goloso e inconfondibile cuore di Nutella.",
+                  "allergens": "ALL. 1, 3, 6, 7"
+                },
+                {
+                  "name": "MUFFIN FALCONE",
+                  "price": "€ 2,00",
+                  "description": "Sofficissimo muffin proposto in un assortimento di gusti ricchi e golosi, ideale per accompagnare il tuo caffè.",
+                  "allergens": "ALL. 1, 3, 6, 7"
+                },
+                {
+                  "name": "MUFFIN SAN CARLO Senza Glutine",
+                  "price": "€ 2,00",
+                  "description": "Soffice, goloso e preparato in totale sicurezza da San Carlo, ideale per una pausa dolce e leggera senza glutine.",
+                  "allergens": "ALL. 3"
+                },
+                {
+                  "name": "Pasticciotto",
+                  "price": "€ 2,00",
+                  "description": "Il re della tradizione: scrigno di frolla dorata che custodisce un cuore di crema pasticcera.",
+                  "allergens": "ALL. 1, 3, 7"
+                },
+                {
+                  "name": "Crostata o torta del giorno",
+                  "price": "€ 2,50",
+                  "description": "La nostra proposta dolce del mattino, tra grandi classici di frolla e soffici torte artigianali, per offrirti ogni giorno una sfumatura di sapore diversa.",
+                  "allergens": "ALL. 1, 3, 7"
+                },
+                {
+                  "name": "Ciambella",
+                  "price": "€ 1,90",
+                  "description": "Tutta la morbidezza del classico donut americano, perfetto per una pausa dolce e colorata.",
+                  "allergens": "ALL. 1, 3, 7"
+                }
+              ]
+            },
+            {
+              "type": "customBox",
+              "title": null,
+              "paragraphs": [
+                "<strong>Nota:</strong> Presso il nostro banco colazione sono esposti ulteriori prodotti, anche senza glutine, con i relativi prezzi chiaramente indicati."
+              ]
+            }
           ]
         }
-      ]
+      ],
+      "allergenLegend": "LEGENDA ALLERGENI: 1. Cereali/Glutine | 3. Uova | 4. Pesce | 5. Arachidi | 6. Soia | 7. Latte | 8. Frutta a guscio | 11. Sesamo | 12. Solfiti."
     },
-    {
-      "id": "freschi",
-      "label": "Freschi & Dissetanti",
-      "title": "I freschi & dissetanti",
-      "infoBox": "Ricette storiche, sciroppi tradizionali e specialità espresse: una selezione di bevande rinfrescanti pensate per regalarti una pausa autentica e rigenerante in qualsiasi momento.",
-      "content": [
+    "en": {
+      "sections": [
         {
-          "type": "items",
-          "subtitle": "I classici",
-          "items": [        
+          "id": "caffetteria",
+          "label": "Coffee Selection [EN]",
+          "title": "Our Coffee Selection [EN]",
+          "infoBox": "Info box placeholder EN",
+          "content": [
             {
-              "name": "Latte e menta",
-              "description": "Un'iconica combinazione di dolcezza e freschezza: il sapore delicato del latte fresco incontra la nota rigenerante e profumata dello sciroppo di menta.",
-              "price": "€ 2,50",
-              "allergens": "ALL. 7"
+              "type": "items",
+              "subtitle": "The Great Classics [EN]",
+              "items": [
+                { "name": "Espresso [EN]", "description": "Description EN", "price": "€ 1,20" },
+                { "name": "Espresso Macchiato [EN]", "description": "Description EN", "price": "€ 1,20", "allergens": "ALL. 7" },
+                { "name": "Caffè Americano [EN]", "description": "Description EN", "price": "€ 2,00" },
+                { "name": "Espressino [EN]", "price": "€ 1,30", "description": "Description EN", "allergens": "ALL. 7" },
+                { "name": "Cappuccino [EN]", "price": "€ 1,50", "description": "Description EN", "allergens": "ALL. 7" },
+                { "name": "Babyccino al Cacao [EN]", "price": "€ 1,30", "description": "Description EN", "allergens": "ALL. 7" },
+                { "name": "Mokaccino [EN]", "price": "€ 1,80", "description": "Description EN", "allergens": "ALL. 7" },
+                { "name": "Caffellatte [EN]", "price": "€ 1,70", "description": "Description EN", "allergens": "ALL. 7" },
+                { "name": "Latte Bianco [EN]", "price": "€ 1,50", "description": "Description EN", "allergens": "ALL. 7" },
+                { "name": "Latte Macchiato [EN]", "price": "€ 1,50", "description": "Description EN", "allergens": "ALL. 7" },
+                { "name": "Orzo [EN]", "description": "Description EN", "price": "€ 1,50", "allergens": "ALL. 1" },
+                { "name": "GINSENG [EN]", "description": "Description EN", "price": "€ 1,50", "allergens": "ALL. 7" }
+              ]
             },
             {
-              "name": "Acqua e orzata",
-              "description": " Il dissetante tradizionale per eccellenza: la dolcezza avvolgente e l'aroma inconfondibile dell'orzata, servita fresca e ghiacciata.",
-              "price": "€ 2,00",
-              "allergens": "ALL. 8"
+              "type": "items",
+              "subtitle": "Cold Drinks [EN]",
+              "items": [
+                { "name": "Caffè in Ghiaccio [EN]", "description": "Description EN", "price": "€ 1,50" },
+                { "name": "Caffè Freddo [EN]", "price": "€ 2,00", "description": "Description EN" },
+                { "name": "Caffè Leccese [EN]", "price": "€ 2,00", "description": "Description EN", "allergens": "ALL. 8" },
+                { "name": "Iced Americano [EN]", "price": "€ 2,30", "description": "Description EN" },
+                { "name": "Iced Latte [EN]", "price": "€ 2,50", "description": "Description EN", "allergens": "ALL. 7" }
+              ]
             },
             {
-              "name": "Acqua e mandorla",
-              "description": "Un grande classico dell'estate: tutto il piacere rinfrescante dell'acqua unito alla nota dolce, intensa e profondamente aromatica dello sciroppo di mandorla.",
-              "price": "€ 2,00",
-              "allergens": "ALL. 8"
+              "type": "items",
+              "subtitle": "Other Preparations [EN]",
+              "items": [
+                { "name": "Cioccolata Calda [EN]", "price": "€ 3,00", "description": "Description EN", "allergens": "ALL. 7" },
+                { "name": "Crema al Caffè [EN]", "price": "€ 3,00", "allergens": "ALL. 7", "description": "Description EN" },
+                { "name": "Spremuta d'Arancia Fresca [EN]", "price": "€ 3,00", "description": "Description EN" },
+                { "name": "Tea / Infusi / Camomilla [EN]", "price": "€ 2,00", "description": "Description EN" }
+              ]
             },
             {
-              "name": "Acqua e menta",
-              "description": "Semplice, immediata e totalmente rigenerante: la freschezza assoluta della menta si unisce alla purezza dell'acqua per una perfetta pausa dissetante.",
-              "price": "€ 2,00"
-            },
-            {
-              "name": "Tea freddo",
-              "description": "Un grande classico dell'estate, fresco e rigenerante. Disponibile al gusto limone o pesca, servito con ghiaccio.",
-              "price": "€ 2,00"
+              "type": "customBox",
+              "title": "Customize your moment [EN]",
+              "paragraphs": [
+                "Syrups placeholder EN",
+                "Variants placeholder EN",
+                "Veg choices placeholder EN",
+                "Extras placeholder EN",
+                "Corrections placeholder EN",
+                "Takeaway note placeholder EN"
+              ]
             }
           ]
         },
         {
-          "type": "items",
-          "subtitle": "Le sciacquette",
-          "items": [
+          "id": "freschi",
+          "label": "Fresh & Thirst-Quenching [EN]",
+          "title": "Fresh & Thirst-Quenching [EN]",
+          "infoBox": "Info box placeholder EN",
+          "content": [
             {
-              "name": "Sciacquetta Classica",
-              "price": "€ 2,00",
-              "description": "La rinfrescante anima di Bari in versione tradizionale: limone fresco, ghiaccio tritato e acqua tonica."
+              "type": "items",
+              "subtitle": "The Classics [EN]",
+              "items": [
+                { "name": "Latte e menta [EN]", "description": "Description EN", "price": "€ 2,50", "allergens": "ALL. 7" },
+                { "name": "Acqua e orzata [EN]", "description": "Description EN", "price": "€ 2,00", "allergens": "ALL. 8" },
+                { "name": "Acqua e mandorla [EN]", "description": "Description EN", "price": "€ 2,00", "allergens": "ALL. 8" },
+                { "name": "Acqua e menta [EN]", "description": "Description EN", "price": "€ 2,00" },
+                { "name": "Tea freddo [EN]", "description": "Description EN", "price": "€ 2,00" }
+              ]
             },
             {
-              "name": "Sciacquetta Mediterranea",
-              "price": "€ 2,50",
-              "description": "Una variante agrumata e dissetante: un blend fresco di arancia e limone con ghiaccio tritato e acqua tonica."
+              "type": "items",
+              "subtitle": "Le sciacquette [EN]",
+              "items": [
+                { "name": "Sciacquetta Classica [EN]", "price": "€ 2,00", "description": "Description EN" },
+                { "name": "Sciacquetta Mediterranea [EN]", "price": "€ 2,50", "description": "Description EN" }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "specialita",
+          "label": "Coffee Specialties [EN]",
+          "title": "Coffee Specialties [EN]",
+          "infoBox": "Info box placeholder EN",
+          "content": [
+            {
+              "type": "items",
+              "subtitle": "Shaken [EN]",
+              "items": [
+                { "name": "Caffè Shakerato [EN]", "price": "€ 3,00", "description": "Description EN" },
+                { "name": "Caffè Shakerato al Borghetti [EN]", "price": "€ 3,50", "description": "Description EN" },
+                { "name": "Caffè Shakerato al Baileys [EN]", "price": "€ 3,80", "description": "Description EN", "allergens": "ALL. 7" },
+                { "name": "Caffè Shakerato Leccese [EN]", "price": "€ 2,50", "description": "Description EN", "allergens": "ALL. 8" }
+              ]
+            },
+            {
+              "type": "items",
+              "subtitle": "Coffee Cocktails [EN]",
+              "items": [
+                { "name": "Espresso Tonic [EN]", "price": "€ 3,50", "description": "Description EN" },
+                { "name": "Espresso Martini [EN]", "price": "€ 6,00", "description": "Description EN" },
+                { "name": "Black Russian [EN]", "price": "€ 6,00", "description": "Description EN" },
+                { "name": "Irish Coffee [EN]", "price": "€ 6,00", "description": "Description EN", "allergens": "ALL. 7" }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "colazione",
+          "label": "Breakfast & Sweets [EN]",
+          "title": "Breakfast & Sweets [EN]",
+          "infoBox": "Info box placeholder EN",
+          "content": [
+            {
+              "type": "items",
+              "subtitle": "Breakfast [EN]",
+              "items": [
+                { "name": "Cornetto classico o Farcito [EN]", "price": "€ 1,30", "description": "Description EN", "allergens": "ALL. 1, 3, 7" },
+                { "name": "Cornetto ai cereali o vegano [EN]", "price": "€ 1,30", "description": "Description EN", "allergens": "ALL. 1" },
+                { "name": "Cornetto doppia farcitura [EN]", "price": "€ 1,40", "description": "Description EN", "allergens": "ALL. 1, 3, 6, 7" },
+                { "name": "Cornetto mignon [EN]", "price": "€ 0,80", "description": "Description EN", "allergens": "ALL. 1, 3, 6, 7" },
+                { "name": "Cornetto senza glutine [EN]", "price": "€ 2,80", "description": "Description EN", "allergens": "ALL. 3, 7" },
+                { "name": "Sfoglia o saccottino [EN]", "price": "€ 1,50", "description": "Description EN", "allergens": "ALL. 1, 3, 7" },
+                { "name": "Pangocciolo [EN]", "price": "€ 1,50", "description": "Description EN", "allergens": "ALL. 1, 3, 6, 7" },
+                { "name": "Krapfen e tarallo di zucchero [EN]", "price": "€ 1,30", "description": "Description EN", "allergens": "ALL. 1, 3, 7" }
+              ]
+            },
+            {
+              "type": "items",
+              "subtitle": "Sweets [EN]",
+              "items": [
+                { "name": "Frollino [EN]", "price": "€ 1,00", "description": "Description EN", "allergens": "ALL. 1, 3, 7" },
+                { "name": "Frollino Falcone Senza Glutine [EN]", "price": "€ 1,80", "description": "Description EN", "allergens": "ALL. 3, 7" },
+                { "name": "Nutella Muffin Ferrero [EN]", "price": "€ 2,00", "description": "Description EN", "allergens": "ALL. 1, 3, 6, 7" },
+                { "name": "MUFFIN FALCONE [EN]", "price": "€ 2,00", "description": "Description EN", "allergens": "ALL. 1, 3, 6, 7" },
+                { "name": "MUFFIN SAN CARLO Senza Glutine [EN]", "price": "€ 2,00", "description": "Description EN", "allergens": "ALL. 3" },
+                { "name": "Pasticciotto [EN]", "price": "€ 2,00", "description": "Description EN", "allergens": "ALL. 1, 3, 7" },
+                { "name": "Crostata o torta del giorno [EN]", "price": "€ 2,50", "description": "Description EN", "allergens": "ALL. 1, 3, 7" },
+                { "name": "Ciambella [EN]", "price": "€ 1,90", "description": "Description EN", "allergens": "ALL. 1, 3, 7" }
+              ]
+            },
+            {
+              "type": "customBox",
+              "title": null,
+              "paragraphs": [
+                "Breakfast counter note placeholder EN"
+              ]
             }
           ]
         }
-      ]
-    },
-    {
-      "id": "specialita",
-      "label": "Specialità Caffè",
-      "title": "Specialità al Caffè",
-      "infoBox": "Non il solito espresso. Esperienze di caffè e coffee cocktail per ogni momento della giornata.",
-      "content": [
-        {
-          "type": "items",
-          "subtitle": "Gli shakerati",
-          "items": [
-            {
-              "name": "Caffè Shakerato",
-              "price": "€ 3,00",
-              "description": "Espresso fresco shakerato energicamente con ghiaccio, fino a ottenere una crema densa e vellutata."
-            },
-            {
-              "name": "Caffè Shakerato al Borghetti",
-              "price": "€ 3,50",
-              "description": "Il classico shakerato, intensificato dalle note decise dello storico liquore al caffè."
-            },
-            {
-              "name": "Caffè Shakerato al Baileys",
-              "price": "€ 3,80",
-              "description": "Una versione piacevolmente cremosa, arricchita dal tocco avvolgente del Baileys.",
-              "allergens": "ALL. 7"
-            },
-            {
-              "name": "Caffè Shakerato Leccese",
-              "price": "€ 2,50",
-              "description": "L'autentico rito salentino rivisitato in un'intensa ed elegante versione shakerata.",
-              "allergens": "ALL. 8"
-            }
-          ]
-        },
-        {
-          "type": "items",
-          "subtitle": "Cocktail al caffè",
-          "items": [
-            {
-              "name": "Espresso Tonic",
-              "price": "€ 3,50",
-              "description": "L'incontro sorprendente tra la freschezza briosa dell'acqua tonica, ghiaccio e l'intensità di un espresso versato in superficie. Agrumato, dissetante e decisamente energetico."
-            },
-            {
-              "name": "Espresso Martini",
-              "price": "€ 6,00",
-              "description": "Un grande classico: Vodka e liquore al caffè si fondono con l'intensità di un espresso fresco."
-            },
-            {
-              "name": "Black Russian",
-              "price": "€ 6,00",
-              "description": "Intenso e deciso. Vodka liscia e liquore al caffè, serviti corti su cubetti di ghiaccio."
-            },
-            {
-              "name": "Irish Coffee",
-              "price": "€ 6,00",
-              "description": "Caffè lungo e caldo, Irish Whiskey e zucchero di canna, sormontati da un morbido strato di panna fresca.",
-              "allergens": "ALL. 7"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "colazione",
-      "label": "Colazione & Dolci",
-      "title": "Colazione & Dolci",
-      "infoBox": "Pasticceria fresca ogni mattina per un buongiorno speciale.",
-      "content": [
-        {
-          "type": "items",
-          "subtitle": "Colazione",
-          "items": [
-            {
-              "name": "Cornetto classico o Farcito",
-              "price": "€ 1,30",
-              "description": "Sfoglia fragrante e leggera, disponibile vuoto o con le nostre farciture della casa.",
-              "allergens": "ALL. 1, 3, 7"
-            },
-            {
-              "name": "Cornetto ai cereali o vegano",
-              "price": "€ 1,30",
-              "description": "Tutto il gusto della colazione racchiuso in un impasto alternativo, leggero e nutriente.",
-              "allergens": "ALL. 1"
-            },
-            {
-              "name": "Cornetto doppia farcitura",
-              "price": "€ 1,40",
-              "description": "Per i più golosi: un doppio e ricco ripieno per un'esplosione di sapore.",
-              "allergens": "ALL. 1, 3, 6, 7"
-            },
-            {
-              "name": "Cornetto mignon",
-              "price": "€ 0,80",
-              "description": "La nostra sfoglia in formato ridotto, per un dolce e leggero sfizio quotidiano.",
-              "allergens": "ALL. 1, 3, 6, 7"
-            },
-            {
-              "name": "Cornetto senza glutine",
-              "price": "€ 2,80",
-              "description": "La fragranza della colazione tradizionale, preparata con cura e racchiusa in sicurezza.",
-              "allergens": "ALL. 3, 7"
-            },
-            {
-              "name": "Sfoglia o saccottino",
-              "price": "€ 1,50",
-              "description": "Dolci geometrie di pasta sfoglia, burrose e irresistibili.",
-              "allergens": "ALL. 1, 3, 7"
-            },
-            {
-              "name": "Pangocciolo",
-              "price": "€ 1,50",
-              "description": "Un soffice e tenero morso arricchito da una pioggia di gocce di cioccolato.",
-              "allergens": "ALL. 1, 3, 6, 7"
-            },
-            {
-              "name": "Krapfen e tarallo di zucchero",
-              "price": "€ 1,30",
-              "description": "La tradizione dei grandi fritti delle feste, soffici e ricoperti di zucchero.",
-              "allergens": "ALL. 1, 3, 7"
-            }
-          ]
-        },
-        {
-          "type": "items",
-          "subtitle": "Dolci",
-          "items": [
-            {
-              "name": "Frollino",
-              "price": "€ 1,00",
-              "description": "Friabili biscotti di frolla artigianale, disponibili semplici o con ricche farciture, perfetti da inzuppare o da gustare da soli.",
-              "allergens": "ALL. 1, 3, 7"
-            },
-            {
-              "name": "Frollino Falcone Senza Glutine",
-              "price": "€ 1,80",
-              "description": "Tutta la fragranza e la friabilità della frolla firmata Falcone, preparata con ingredienti selezionati senza glutine.",
-              "allergens": "ALL. 3, 7"
-            },
-            {
-              "name": "Nutella Muffin Ferrero",
-              "price": "€ 2,00",
-              "description": "L'originale muffin firmato Ferrero: un soffice impasto con yogurt che racchiude un goloso e inconfondibile cuore di Nutella.",
-              "allergens": "ALL. 1, 3, 6, 7"
-            },
-            {
-              "name": "MUFFIN FALCONE",
-              "price": "€ 2,00",
-              "description": "Sofficissimo muffin proposto in un assortimento di gusti ricchi e golosi, ideale per accompagnare il tuo caffè.",
-              "allergens": "ALL. 1, 3, 6, 7"
-            },
-            {
-              "name": "MUFFIN SAN CARLO Senza Glutine",
-              "price": "€ 2,00",
-              "description": "Soffice, goloso e preparato in totale sicurezza da San Carlo, ideale per una pausa dolce e leggera senza glutine.",
-              "allergens": "ALL. 3"
-            },
-            {
-              "name": "Pasticciotto",
-              "price": "€ 2,00",
-              "description": "Il re della tradizione: scrigno di frolla dorata che custodisce un cuore di crema pasticcera.",
-              "allergens": "ALL. 1, 3, 7"
-            },
-            {
-              "name": "Crostata o torta del giorno",
-              "price": "€ 2,50",
-              "description": "La nostra proposta dolce del mattino, tra grandi classici di frolla e soffici torte artigianali, per offrirti ogni giorno una sfumatura di sapore diversa.",
-              "allergens": "ALL. 1, 3, 7"
-            },
-            {
-              "name": "Ciambella",
-              "price": "€ 1,90",
-              "description": "Tutta la morbidezza del classico donut americano, perfetto per una pausa dolce e colorata.",
-              "allergens": "ALL. 1, 3, 7"
-            }
-          ]
-        },
-        {
-          "type": "customBox",
-          "title": null,
-          "paragraphs": [
-            "<strong>Nota:</strong> Presso il nostro banco colazione sono esposti ulteriori prodotti, anche senza glutine, con i relativi prezzi chiaramente indicati."
-          ]
-        }
-      ]
+      ],
+      "allergenLegend": "ALLERGEN LEGEND: 1. Cereals/Gluten | 3. Eggs | 4. Fish | 5. Peanuts | 6. Soy | 7. Milk | 8. Tree nuts | 11. Sesame | 12. Sulfites."
     }
-  ],
-  "allergenLegend": "LEGENDA ALLERGENI: 1. Cereali/Glutine | 3. Uova | 4. Pesce | 5. Arachidi | 6. Soia | 7. Latte | 8. Frutta a guscio | 11. Sesamo | 12. Solfiti."
+  }
 }
