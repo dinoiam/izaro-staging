@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ÍZAROcafè - Menù Digitale</title>
+    <link id="theme-stylesheet" rel="stylesheet" type="text/css" href="tema-1.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="immagini/logo.png">
+
+    <style>
+        .stile {
+            position: fixed;
+            top: 0;
+            right: 0;
+            padding: 5px;
+            background-color: #78a8ff;
+            color: rgb(75, 60, 60);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 1000;
+            width: 40%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <img src="logo.svg" alt="ÍZAROcafè" class="logo-svg">
+        <div class="logo-sub">Benvenuti. Lasciatevi ispirare.</div>
+    </header>
+
+    <div class="sticky-header">
+        <div class="search-bar">
+            <input type="search" id="search-input" placeholder="Cerca nel menù..." autocomplete="off">
+        </div>
+
+        <nav id="categories-nav"></nav>
+    </div>
+
+    <div class="container" id="container"></div>
+
+    <div class="no-results" id="no-results">
+        <p>Nessun prodotto trovato.</p>
+        <p class="hint">Prova con un'altra parola chiave.</p>
+    </div>
+
+    <footer id="site-footer"></footer>
+
+    <script>
+        let menuData = null;
+        let currentSectionId = '';
+        let observer = null;
+        const scrollMargin = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--scroll-margin')) || 145;
+
+        fetch('data/menu.json')
+            .then(r => r.json())
+            .then(data => {
+                menuData = data;
+                renderNav(data.sections);
+                renderSections(data);
+                renderFooter(data);
+                initObserver(data.sections);
+                document.getElementById('search-input').addEventListener('input', onSearch);
+                document.getElementById('container').addEventListener('click', onSectionTitleClick);
+            });
+
+        function renderNav(sections) {
+            const nav = document.getElementById('categories-nav');
+            nav.innerHTML = sections.map(s =>
+                `<a href="#${s.id}">${s.label}</a>`
+            ).join('');
+        }
+
+        function renderSections(data) {
+            const container = document.getElementById('container');
+
+            const html = `
+                ${data.sections.map(section => {
+                let hasRenderedItem = false;
+                return `
+                        <section id="${section.id}">
+                            <h2 class="section-title">${section.title}</h2>
+                            ${section.infoBox ? `<div class="info-box">${section.infoBox}</div>` : ''}
+                            ${section.content.map(block => {
+                    if (block.type === 'customBox') {
+                        hasRenderedItem = true;
+                        const styleAttr = block.style
+                            ? `style="background:${block.style.background};border-left-color:${block.style.borderLeftColor};margin-bottom:${block.style.marginBottom}"`
+                            : '';
+                        return `
+                                        <div class="custom-box" ${styleAttr}>
+                                            ${block.title ? `<h4>${block.title}</h4>` : ''}
+                                            ${block.paragraphs.map(p => `<p style="margin-top:${block.paragraphs.indexOf(p) > 0 ? '4' : '0'}px">${p}</p>`).join('')}
+                                        </div>
+                                    `;
+                    }
+                    const subtitleClass = block.subtitle
+                        ? (hasRenderedItem ? 'section-subtitle--spaced' : 'section-subtitle--first')
+                        : '';
+                    hasRenderedItem = true;
+                    return `
+                                    ${block.subtitle ? `<p class="section-subtitle ${subtitleClass}">${block.subtitle}</p>` : ''}
+                                    ${block.items.map(item => `
+                                        <div class="menu-item">
+                                            <div class="item-main">
+                                                <div class="item-title">
+                                                    <span class="item-name">${item.name}${item.detail ? ` <small style="font-weight:normal;color:var(--text-muted)">${item.detail}</small>` : ''}</span>
+                                                    ${item.allergens ? `<span class="allergen">(${item.allergens})</span>` : ''}
+                                                </div>
+                                                <span class="item-price">${item.price ? item.price.replace(/€\s*/, '€\u00A0') : ''}</span>
+                                            </div>
+                                            ${item.description ? `<div class="item-description">${item.description}</div>` : ''}
+                                        </div>
+                                    `).join('')}
+                                `;
+                }).join('')}
+                        </section>
+                    `;
+            }).join('')}
+            `;
+
+            container.innerHTML = html;
+        }
+
+        function renderFooter(data) {
+            const footer = document.getElementById('site-footer');
+            footer.innerHTML = `
+                <p><strong>${data.allergenLegend}</strong></p>
+                <p style="margin-top: 10px;">Il registro completo è disponibile presso il nostro personale.</p>
+                <p style="margin-top: 15px; font-size:0.7rem; opacity:0.6;">&copy; 2026 ÍZAROcafè. Tutti i diritti riservati.</p>
+            `;
+        }
+
+        function initObserver(sections) {
+            if (observer) observer.disconnect();
+
+            const navLinks = document.querySelectorAll('nav a');
+            const visibleSections = new Set();
+
+            observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        visibleSections.add(entry.target.id);
+                    } else {
+                        visibleSections.delete(entry.target.id);
+                    }
+                });
+
+                // Trova la prima sezione visibile nell'ordine del DOM
+                const activeId = sections.find(s => visibleSections.has(s.id))?.id;
+                if (!activeId || activeId === currentSectionId) return;
+                currentSectionId = activeId;
+
+                navLinks.forEach(a => a.classList.remove('active'));
+                const activeLink = document.querySelector(`nav a[href="#${currentSectionId}"]`);
+                if (activeLink) {
+                    activeLink.classList.add('active');
+                    activeLink.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                }
+            }, { rootMargin: `-${scrollMargin}px 0px -40% 0px`, threshold: 0 });
+
+            sections.forEach(s => {
+                const el = document.getElementById(s.id);
+                if (el) observer.observe(el);
+            });
+        }
+
+        function normalizeText(str) {
+            return str.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        }
+
+        function onSearch(e) {
+            const q = normalizeText(e.target.value.trim());
+            const isSearching = q.length > 0;
+
+            document.body.classList.toggle('search-active', isSearching);
+            document.getElementById('no-results').style.display = 'none';
+
+            if (observer) {
+                observer.disconnect();
+                observer = null;
+            }
+
+            if (!isSearching) {
+                renderSections(menuData);
+                initObserver(menuData.sections);
+                return;
+            }
+
+            const filtered = filterData(menuData, q);
+
+            if (filtered.sections.length === 0) {
+                document.getElementById('container').innerHTML = '';
+                document.getElementById('no-results').style.display = 'block';
+                return;
+            }
+
+            renderSections(filtered);
+        }
+
+        function filterData(data, query) {
+            const q = normalizeText(query);
+            const sections = data.sections.map(s => {
+                const sectionMatch = normalizeText(s.title).includes(q);
+                return {
+                    ...s,
+                    content: s.content.map(b => {
+                        if (b.type === 'customBox') return null;
+                        if (sectionMatch) return b;
+                        const subtitleMatch = b.subtitle && normalizeText(b.subtitle).includes(q);
+                        if (subtitleMatch) return b;
+                        const items = b.items.filter(item =>
+                            normalizeText(item.name).includes(q) ||
+                            (item.description && normalizeText(item.description).includes(q)) ||
+                            (item.detail && normalizeText(item.detail).includes(q)) ||
+                            (item.allergens && normalizeText(item.allergens).includes(q))
+                        );
+                        return items.length > 0 ? { ...b, items } : null;
+                    }).filter(Boolean)
+                };
+            }).filter(s => s.content.length > 0);
+
+            return { infoBox: data.infoBox, sections, allergenLegend: data.allergenLegend };
+        }
+
+        function onSectionTitleClick(e) {
+            const title = e.target.closest('.section-title');
+            if (title && document.body.classList.contains('search-active')) {
+                const sectionId = title.closest('section').id;
+                const input = document.getElementById('search-input');
+                input.value = '';
+                input.dispatchEvent(new Event('input'));
+                requestAnimationFrame(() => {
+                    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+                });
+            }
+        }
+    </script>
+</body>
+
+</html>
