@@ -48,13 +48,9 @@
             gap: 2px;
             margin-left: 12px;
         }
-        .lang-switcher .lang-btn:not(:last-child)::after {
-            content: '|';
-            margin-left: 4px;
-            opacity: 0.3;
-        }
-        .lang-switcher .lang-btn.active::after {
-            opacity: 0.5;
+        .lang-sep {
+            color: #333;
+            font-weight: 300;
         }
     </style>
 </head>
@@ -66,6 +62,7 @@
         <div class="logo-sub">Benvenuti. Lasciatevi ispirare.</div>
         <div class="lang-switcher">
             <button class="lang-btn active" data-lang="it" onclick="switchLanguage('it')">IT</button>
+            <span class="lang-sep">|</span>
             <button class="lang-btn" data-lang="en" onclick="switchLanguage('en')">EN</button>
         </div>
     </header>
